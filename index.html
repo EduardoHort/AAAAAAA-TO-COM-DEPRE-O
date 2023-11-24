@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    
 <head>
-    
     <meta charset="UTF-8">
-    
-    <title>Introdução ao JavaScript</title>
-
-
+    <title>Formulário JavaScript</title>
 </head>
-    
 <body>
-    
-    <h1>Aprendendo JavaScript</h1>
+    <h1>Formulário JavaScript</h1>
+
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name">
+    <button id="submitButton">Enviar</button>
+
+    <div id="result"></div>
 
     <script>
-        src= 'index.js'
+        src='index.js'
+        // Selecionando o botão e o campo de nome
+        const submitButton = document.getElementById('submitButton');
+        const nameInput = document.getElementById('name');
         
+        // Adicionando um evento de clique ao botão
+        submitButton.addEventListener('click', function() {
+            // Obtendo o valor do campo de nome
+            const name = nameInput.value;
+            
+            // Mostrando a mensagem na tela
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>Bem-vindo(a), ${name}!</p>`;
+        });
     </script>
-    
 </body>
-    
 </html>
